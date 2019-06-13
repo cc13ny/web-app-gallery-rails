@@ -1,0 +1,1 @@
+# my_rails_repo_skeleton
