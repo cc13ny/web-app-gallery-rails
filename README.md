@@ -28,6 +28,7 @@ Note:
 4. set up simple form
 5. set up reform
 6. set up rspec
+7. set up slim
 
 ## Optional
 1. set up select2
