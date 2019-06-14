@@ -10,6 +10,32 @@ Note:
 + 2nd stage: new tech stack
 + 3nd stage: new language
 
+# ToDo
+
+## Guide
+
+1. create different branches for setup
+2. create a branch called integration for the validation of the branch merges
+3. do it progressively (which doesn't mean you don't need to think)
+4. think about what are the most important
+5. create different branches as the combination
+
+## Required
+
+1. set up devise for authentication
+2. set up bootstrap 3
+3. set up mysql database
+4. set up simple form
+5. set up reform
+6. set up rspec
+
+## Optional
+1. set up select2
+2. set up elasticsearch
+
+# Doing
+
+# Done
 
 # Rails Originally Generated README
 This README would normally document whatever steps are necessary to get the
