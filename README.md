@@ -32,10 +32,19 @@ Note:
 ## Optional
 1. set up select2
 2. set up elasticsearch
+3. set up react
+4. set up angular?
 
 # Doing
 
 # Done
+
+# To Learn
+
+# To Question
+
+1. Warden?
+
 
 # Rails Originally Generated README
 This README would normally document whatever steps are necessary to get the
