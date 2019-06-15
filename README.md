@@ -54,12 +54,13 @@ Note:
 6. 206 - Yelp
 5. 206 - BookMyShow
 6. 207 - Pastebin
+7. 208 - Datadog
+8. 209 - Slack
 
 ## Optional
 
 1. 301 - Stackoverflow
 2. 302 - Quora
-3. 303 - Slack
 4. 304 - Amazon
 6. 305 - Linkedin
 7. 306 - Slack
