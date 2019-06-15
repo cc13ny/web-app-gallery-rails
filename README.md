@@ -36,6 +36,37 @@ Note:
 3. set up react
 4. set up angular?
 
+# Projects
+
+## Required
+
+1. 201 - Twitter
+2. 202 - Dropbox
+3. 203 - Facebook
+4. 204 - Youtube
+5. 205 - Uber
+6. 206 - Yelp
+5. 206 - BookMyShow
+6. 207 - Pastebin
+
+## Optional
+
+1. 301 - Stackoverflow
+2. 302 - Quora
+3. 303 - Slack
+4. 304 - Amazon
+6. 305 - Linkedin
+7. 306 - Slack
+8. 307 - Airbnb
+9. 308 - Google Flight
+10. 309 - Bittiger
+11. 310 - Sibian
+12. 311 - Leetcode
+13. 312 - Netflix
+14. 313 - Asana
+15. 314 - Trello
+16. 315 - Pinterest
+
 # Doing
 
 # Done
