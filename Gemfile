@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'slim'
+gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'simple_form'
 
