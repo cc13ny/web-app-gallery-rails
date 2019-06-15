@@ -61,18 +61,18 @@ Note:
 
 1. 301 - Stackoverflow
 2. 302 - Quora
-4. 304 - Amazon
-6. 305 - Linkedin
-7. 306 - Slack
-8. 307 - Airbnb
-9. 308 - Google Flight
-10. 309 - Bittiger
-11. 310 - Sibian
-12. 311 - Leetcode
-13. 312 - Netflix
-14. 313 - Asana
-15. 314 - Trello
-16. 315 - Pinterest
+3. 303 - Amazon
+4. 304 - Linkedin
+5. 305 - Slack
+6. 306 - Airbnb
+7. 307 - Google Flight
+8. 308 - Bittiger
+9. 309 - Sibian
+10. 310 - Leetcode
+11. 311 - Netflix
+12. 312 - Asana
+13. 313 - Trello
+14. 314 - Pinterest
 
 # To Learn
 
