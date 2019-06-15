@@ -10,9 +10,11 @@ Note:
 + 2nd stage: new tech stack
 + 3nd stage: new language
 
-# ToDo
+# Libraries
 
-## Guide
+## ToDo
+
+### Guide
 
 1. create different branches for setup
 2. create a branch called integration for the validation of the branch merges
@@ -20,7 +22,7 @@ Note:
 4. think about what are the most important
 5. create different branches as the combination
 
-## Required
+### Required
 
 1. set up devise for authentication
 2. set up bootstrap 3
@@ -30,11 +32,15 @@ Note:
 6. set up rspec
 7. set up slim [Merged]
 
-## Optional
+### Optional
 1. set up select2
 2. set up elasticsearch
 3. set up react
 4. set up angular?
+
+## Doing
+
+## Done
 
 # Projects
 
@@ -66,10 +72,6 @@ Note:
 14. 313 - Asana
 15. 314 - Trello
 16. 315 - Pinterest
-
-# Doing
-
-# Done
 
 # To Learn
 
