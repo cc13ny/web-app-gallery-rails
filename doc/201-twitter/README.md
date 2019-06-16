@@ -33,3 +33,16 @@ Optional | user | my tweet includes videos | I can share videos
 # Functionality Design
 
 # Statistics Estimation
+
+# How to Get more ideas
+
+1. Try __Twitter__
+2. Directions
+
+   a) Interaction
+   
+   b) Influence
+   
+   c） Operations on tweets
+
+# Define Problems
