@@ -7,8 +7,8 @@ default: &default
 
 development:
   <<: *default
-  database: sk_development
+  database: twitter_development
 
 test:
   <<: *default
-  database: sk_development
+  database: twitter_development
