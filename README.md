@@ -37,6 +37,15 @@ Note:
 2. set up elasticsearch
 3. set up react
 4. set up angular?
+5. set up datatable
+6. set up reform
+7. set up policy
+8. set up repository
+9. set up decorator
+10. set up flow
+11. set up sneaker
+12. set up fontawesome
+13. set up s3
 
 ## Doing
 
