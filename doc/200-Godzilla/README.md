@@ -3,6 +3,8 @@ Godzilla is the code to create an all-encompassing app for the purpose of practi
 
 ## ToDo
 
+### Features
+
 1. search
 2. profile
 3. subscription
@@ -26,3 +28,11 @@ Godzilla is the code to create an all-encompassing app for the purpose of practi
 21. student and class
 25. inspired from sql problems
 26. inspired by different services
+27. save everything
+
+### Libraries
+
+1. React
+2. Angular
+3. Cassandra
+4. MongoDB
