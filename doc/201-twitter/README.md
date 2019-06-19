@@ -32,6 +32,8 @@ Optional | user | my tweet includes videos | I can share videos
 
 # Functionality Design
 
+1. Follow the rules of OOD
+
 # Statistics Estimation
 
 # System Design
