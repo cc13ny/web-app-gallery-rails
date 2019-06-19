@@ -34,16 +34,38 @@ Optional | user | my tweet includes videos | I can share videos
 
 # Statistics Estimation
 
+# System Design
+
+some system-related libraries I can try
+
+1. ngnix: load balancer
+2. mysql: cluster & sharding
+3. redis: cache
+
+# Random
+1. page loading speed
+2. you should know to use which libraries based on the estimated number
+
 # How to Get more ideas
 
 1. Try __Twitter__
-2. Directions
+2. Directions to Get Ideas
 
-   a) Interaction
+   a) From User
    
-   b) Influence
+      1. increase interaction among tweets
    
-   c) Operations on tweets
+      2. increase influence among tweets
+   
+      3. any operations on tweets
+   
+   b) From Other Material
+   
+      1. Grokking
+      
+      2. Rails Twitter
+      
+   c) From (No)SQL
 
 # Define Problems
 
