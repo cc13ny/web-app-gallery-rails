@@ -1,0 +1,7 @@
+= simple_form_for tweet, remote: true do |f|
+  = f.error_notification
+  .form-inputs
+    = f.hidden_field :user_id, value: current_user.id
+    = f.input :text, required: true
+  .form-actions
+    = f.button :submit, class: 'btn-primary pull-right'

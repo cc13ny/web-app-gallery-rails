@@ -1,5 +1,7 @@
-h1 New tweet
+.container-fluid
+  .row
+    .col-xs-6.col-xs-offset-3
+      h1 New tweet
+      == render 'form', tweet: @tweet
 
-== render 'form'
-
-= link_to 'Back', tweets_path
+      = link_to 'Back', tweets_path
