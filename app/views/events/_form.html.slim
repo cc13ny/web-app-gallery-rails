@@ -1,0 +1,11 @@
+
+= simple_form_for @event do |f|
+  .col-xs-8
+    = f.input :title
+    = f.input :description
+    = f.input :is_public
+  .col-xs-4
+    = f.input :starts_at
+    = f.input :ends_at
+    = f.input :organizer_name
+  = f.button :submit, class: 'btn btn-primary pull-right'
