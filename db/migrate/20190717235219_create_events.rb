@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :description
       t.datetime :starts_at
       t.datetime :ends_at
-      t.boolean :is_public
+      t.boolean :published
       t.datetime :published_at
 
       t.timestamps
