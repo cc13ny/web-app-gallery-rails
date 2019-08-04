@@ -1,3 +1,12 @@
+# ToDo
+
+1. study https://edgeguides.rubyonrails.org/routing.html
+2. 
+
+
+
+
+
 # Features
 
 1. REAL Time Communication (Channels)
