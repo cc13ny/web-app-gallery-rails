@@ -1,19 +1,12 @@
-h1 Listing events
+.container-fluid
+  .row
+    .col-xs-12
+      br
+      a.btn.btn-primary href=new_event_path data-remote=true = 'New Event'
+      a href='#yes' data-toggle='modal' dd
+    .col-xs-12
+      - @events.each do |event|
+        = render 'card', event: event
 
-table
-  thead
-    tr
-      th
-      th
-      th
 
-  tbody
-    - @events.each do |event|
-      tr
-        td = link_to 'Show', event
-        td = link_to 'Edit', edit_event_path(event)
-        td = link_to 'Destroy', event, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Event', new_event_path
+= addRound
