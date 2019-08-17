@@ -1,3 +1,1 @@
-#showModal <%#= modal2 title: "New Event", body: (render('events/form')) %>
-
-showModal <%= addRound %>
+showModal "<%= j modal title: 'New Event', body: 'uh' %>"

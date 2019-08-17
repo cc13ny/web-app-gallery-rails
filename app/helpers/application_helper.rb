@@ -5,6 +5,6 @@ module ApplicationHelper
   end
 
   def addRound opts={}
-    render partial: 'add_round', locals: opts
+    render 'application/add_round'
   end
 end

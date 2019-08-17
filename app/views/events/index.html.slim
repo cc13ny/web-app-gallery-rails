@@ -4,9 +4,10 @@
       br
       a.btn.btn-primary href=new_event_path data-remote=true = 'New Event'
       a href='#yes' data-toggle='modal' dd
+      #yu
     .col-xs-12
       - @events.each do |event|
         = render 'card', event: event
 
 
-= addRound
+/ = addRound
