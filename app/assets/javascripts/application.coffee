@@ -14,6 +14,9 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap-sprockets
+#= require moment
+#= require bootstrap-datetimepicker
+#= require datetime-picker
 
 @showModal = (modal_html) ->
-  $(modal_html).prependTo(document.body).modal()
+  $(modal_html).appendTo(document.body).modal()

@@ -1,5 +1,13 @@
-.modal.fade id='yes'
-  .modal-dialog
+- body ||= body_html.html_safe
+- id ||= nil
+- css_class ||= ''
+
+- size ||=nil
+- dialog_class = size.present? ? ('modal-' + size.to_s) : ''
+
+
+.modal.fade id=id class=css_class
+  .modal-dialog class=dialog_class
     .modal-content
       .modal-header
         button.close type="button" data-dismiss="modal" aria-hidden="true" ×

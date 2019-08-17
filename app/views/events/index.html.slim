@@ -2,12 +2,9 @@
   .row
     .col-xs-12
       br
-      a.btn.btn-primary href=new_event_path data-remote=true = 'New Event'
-      a href='#yes' data-toggle='modal' dd
-      #yu
+      a.btn.btn-primary.pull-right href=new_event_path data-remote=true = 'New Event'
     .col-xs-12
+      hr
+    .col-xs-12#events
       - @events.each do |event|
-        = render 'card', event: event
-
-
-/ = addRound
+        = render 'card_wrapper', event: event
