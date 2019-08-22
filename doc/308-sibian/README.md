@@ -29,6 +29,8 @@
 23. Videos
 24. Profiles
 25. Data Report
+26. Keyword Analysis
+27. Taxonomy
 
 
 ## Tech Stack

@@ -1,5 +1,51 @@
-- if user_signed_in?
-  p Welcome!
-  = link_to 'Logout', destroy_user_session_path, method: :delete
-- else
-  = link_to 'Login', new_user_session_path
+/ - if user_signed_in?
+/   p Welcome!
+/   = link_to 'Logout', destroy_user_session_path, method: :delete
+/ - else
+/   = link_to 'Login', new_user_session_path
+
+
+.container-fluid
+  .row
+    .col-sm-12
+      br
+      = render 'nav_header'
+    .col-sm-12
+      br
+      .row
+        .col-sm-10
+          .row
+            .col-sm-3
+              .input-group
+                input.form-control type="text" placeholder="Recipient's username" aria-describedby="search-addon"
+                span.input-group-addon
+            .col-sm-3
+              .btn-group.special
+                button.btn.btn-default Topics
+                button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  span.caret
+                  span.sr-only Topics
+                ul.dropdown-menu.dropdown-menu-right.fixed-width
+                  li
+                    a href="#" Technology
+            .col-sm-3
+              .btn-group.special
+                button.btn.btn-default Languages
+                button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  span.caret
+                  span.sr-only Languages
+                ul.dropdown-menu.dropdown-menu-right.fixed-width
+                  li
+                    a href="#" Chinese
+            .col-sm-3
+              .btn-group.special
+                button.btn.btn-default Duration
+                button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  span.caret
+                  span.sr-only Duration
+                ul.dropdown-menu.dropdown-menu-right.fixed-width
+                  li
+                    a href="#" 0 - 6 min
+        .col-sm-2
+          button.btn.btn-default More
+

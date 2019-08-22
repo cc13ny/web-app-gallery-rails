@@ -1,6 +1,8 @@
-.panel.panel-primary
+.panel.panel-primary.clickable id="event-#{event.id}"
+  a.click href=edit_event_path(event) data-remote='true' data-method='get'
   .panel-heading
     .panel-title = event.title
   .panel-body
     = event.description
-
+  .panel-footer.text-right
+    | organized by #{event.organizer_name}
