@@ -16,6 +16,9 @@
 #= require bootstrap-sprockets
 #= require moment
 #= require bootstrap-datetimepicker
+#= require react
+#= require react_ujs
+#= require components
 #= require datetime-picker
 
 @showModal = (modal_html) ->
