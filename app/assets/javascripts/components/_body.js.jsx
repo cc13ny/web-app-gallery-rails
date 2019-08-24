@@ -5,7 +5,11 @@ class Body extends React.Component {
             fruits: []
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.addNewFruit = this.addNewFruit.bind(this)
+        this.addNewFruit = this.addNewFruit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.deleteFruit = this.deleteFruit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.updateFruit = this.updateFruit.bind(this);
     }
 
     handleFormSubmit(name, description){
@@ -35,11 +39,56 @@ class Body extends React.Component {
         })
     }
 
+    handleDelete(id){
+        fetch(`/api/v1/fruits/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(
+            (response) => {
+                this.deleteFruit(id);
+                alert('Item was deleted!')
+            }
+        )
+    }
+
+    deleteFruit(id){
+        let newFruits = this.state.fruits.filter((fruit) => fruit.id !== id);
+        this.setState({
+            fruits: newFruits
+        })
+    }
+
+    handleUpdate(fruit){
+        fetch(`api/v1/fruits/${fruit.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({fruit: fruit}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(
+            (response) => {
+                this.updateFruit(fruit);
+            }
+        )
+    }
+
+    updateFruit(fruit){
+        let newFruits = this.state.fruits.filter((f) => f.id !== fruit.id);
+        newFruits.push(fruit);
+        this.setState({
+            fruits: newFruits
+        })
+    }
+
+
     componentDidMount(){
         fetch('/api/v1/fruits.json')
             .then((response) => {return response.json()})
             .then((data) => {this.setState({ fruits: data }) });
     }
+
     render(){
         return(
             <div className="row">
@@ -47,7 +96,11 @@ class Body extends React.Component {
                     <NewFruit handleFormSubmit={this.handleFormSubmit} />
                 </div>
                 <div className="col-xs-12">
-                    <AllFruits fruits={this.state.fruits} />
+                    <AllFruits
+                        fruits       = {this.state.fruits}
+                        handleDelete = {this.handleDelete}
+                        handleUpdate = {this.handleUpdate}
+                    />
                 </div>
             </div>
         )
