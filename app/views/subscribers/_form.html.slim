@@ -1,0 +1,6 @@
+= simple_form_for @subscriber, remote: true do |f|
+  .row
+    .col-sm-8
+      = f.input :email
+    .col-sm-4
+      = f.button :submit, class: 'btn btn-primary'

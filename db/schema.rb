@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190717235219) do
+ActiveRecord::Schema.define(version: 20190824231734) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -19,12 +19,25 @@ ActiveRecord::Schema.define(version: 20190717235219) do
     t.text     "description",    limit: 65535
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.boolean  "published"
+    t.boolean  "is_public"
     t.datetime "published_at"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["ends_at"], name: "index_events_on_ends_at", using: :btree
     t.index ["starts_at"], name: "index_events_on_starts_at", using: :btree
+  end
+
+  create_table "fruits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "subscribers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
