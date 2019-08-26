@@ -17,6 +17,7 @@
 #= require moment
 #= require bootstrap-datetimepicker
 #= require datetime-picker
+#= require calendar
 
 @showModal = (modal_html) ->
   $(modal_html).appendTo(document.body).modal()
