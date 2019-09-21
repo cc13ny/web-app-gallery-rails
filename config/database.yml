@@ -11,4 +11,4 @@ development:
 
 test:
   <<: *default
-  database: sk_development
+  database: sk_test
