@@ -1,0 +1,7 @@
+= simple_form_for @job do |f|
+  .form-inputs
+    = f.hidden_field :company_id
+    = f.input :title, required: true
+    = f.input :description, required: true
+  .form-actions
+    = f.button :submit, class: 'btn-primary pull-right'
