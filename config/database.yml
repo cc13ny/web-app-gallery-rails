@@ -7,8 +7,8 @@ default: &default
 
 development:
   <<: *default
-  database: sk_development
+  database: stackoverflow_development
 
 test:
   <<: *default
-  database: sk_test
+  database: stackoverflow_test
