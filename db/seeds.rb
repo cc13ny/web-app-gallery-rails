@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# nrows = STDIN.gets.chomp
+# puts "creating questions..."
+# puts Time.now
+# (1..nrows.to_i).each do |nrow|
+#   Question.create(:title => 'What is the Maximum Capacity', :text => "Let's try", :user_id => 1)
+# end
+# puts Time.now
