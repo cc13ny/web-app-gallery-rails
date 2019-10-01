@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @talk.name
+p
+  strong User:
+  = @talk.user
+p
+  strong Published:
+  = @talk.published
+p
+  strong Published at:
+  = @talk.published_at
+
+=> link_to 'Edit', edit_talk_path(@talk)
+'|
+=< link_to 'Back', talks_path

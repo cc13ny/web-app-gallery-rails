@@ -1,0 +1,36 @@
+br
+.col-xs-12
+  - @talks.each do |talk|
+    .col-sm-4.col-md-3
+      .panel.panel-default
+        .panel-body
+          | something
+        .panel-footer #{talk.name} by #{talk.guest_name}
+
+
+
+/ table
+/   thead
+/     tr
+/       th Name
+/       th User
+/       th Published
+/       th Published at
+/       th
+/       th
+/       th
+/
+/   tbody
+/     - @talks.each do |talk|
+/       tr
+/         td = talk.name
+/         td = talk.user
+/         td = talk.published
+/         td = talk.published_at
+/         td = link_to 'Show', talk
+/         td = link_to 'Edit', edit_talk_path(talk)
+/         td = link_to 'Destroy', talk, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Talk', new_talk_path
