@@ -11,9 +11,17 @@
  * It is generally better to create a new file per style scope.
  */
 
+@import 'customized_bootstrap/variables-before-bootstrap';
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
+
+@import "utilities/bootstrap4/borders";
+@import "utilities/bootstrap4/spacing";
+@import "utilities/bootstrap4/text";
+@import "utilities/text";
+
+@import "home";
 
 .clickable {
   position: relative;

@@ -1,17 +1,36 @@
-ul.nav.nav-tabs.pull-right
-  li.dropdown role="presentation"
-    = link_to 'WATCH', talks_path, class: 'text-body underline'
-  li.dropdown role="presentation"
-    a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-      => 'ATTEND'
-  li.dropdown role="presentation"
-    a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-      => 'PARTICIPATE'
-  li.dropdown role="presentation"
-    a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-      => 'ARTICLES'
-  li.dropdown role="presentation"
-    a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-      => 'ABOUT'
-  li
-    => 'LOG IN'
+.container
+  /! Brand and toggle get grouped for better mobile display
+  .navbar-header
+    button.navbar-toggle.collapsed aria-expanded="false" data-target="#sibian-navbar-collapse" data-toggle="collapse" type="button"
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand.text-primary.font-weight-bold href="#"  Sibian
+  /! Collect the nav links, forms, and other content for toggling
+  #sibian-navbar-collapse.collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-right
+      li
+        = link_to 'WATCH', talks_path, class: 'text-secondary'
+        / lectures
+        / topices
+        / series
+        / recommendation
+      li
+        = link_to 'BLOG', talks_path, class: 'text-secondary'
+      li.dropdown role="presentation"
+        a.text-secondary class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+          => 'PARTICIPATE'
+        ul.dropdown-menu.dropdown-menu-right
+          li
+            a href="#"
+              | To Share
+              .small.text-muted How to use variouse videos to build up your skills or life
+          li
+            a href="#"
+              | To Volunteer
+              .small.text-muted How to use variouse videos to build up your skills or life
+      li
+        = link_to 'ABOUT', about_path, class: 'text-secondary'
+      li
+        = link_to 'LOGIN', about_path, class: 'text-secondary'
