@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  resources :articles
   root to: "home#index"
   get '/about' => 'home#about'
 
@@ -15,6 +13,11 @@ Rails.application.routes.draw do
   resources :talks
   resources :events
   resources :subscribers
+
+  resources :articles, only: [:index, :show]
+  scope '/admin' do
+    resources :articles, except: [:index, :show]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
