@@ -1,0 +1,72 @@
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-inputs
+    = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }
+    = f.input :password, required: false, input_html: { autocomplete: "current-password" }
+    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+  .form-actions
+    = render "devise/shared/links", link_class: 'btn btn-default pull-right'
+    = f.button :submit, "Log in", class: 'btn-primary'
+
+
+
+/ = simple_form_for resource, as: resource_name, url: session_path(resource_name, @auth_params), remote: true, method: :post, html: {class: 'ca-form new-user'} do |f|
+/   .row
+/     .col-xs-4
+/       a.btn.btn-block.btn-outline-default href=user_omniauth_authorize_path(:facebook, @auth_params)
+/         .visible-xs-block
+/           img src='https://s3.amazonaws.com/cuag/web/v1/register/icon-facebook.svg' width='18'
+/         .hidden-xs
+/           img.social-icon-left src='https://s3.amazonaws.com/cuag/web/v1/register/icon-facebook.svg' width='18'
+/           .font-weight-bold.text-body Facebook
+/
+/       br
+/     .col-xs-4
+/       a.btn.btn-block.btn-outline-default href=user_omniauth_authorize_path(:linkedin, @auth_params)
+/         .visible-xs-block
+/           img src='https://s3.amazonaws.com/cuag/web/v1/register/icon-linkedin.svg' width='18'
+/         .hidden-xs
+/           img.social-icon-left src='https://s3.amazonaws.com/cuag/web/v1/register/icon-linkedin.svg' width='18'
+/           .font-weight-bold.text-body LinkedIn
+/       br
+/     .col-xs-4
+/       a.btn.btn-block.btn-outline-default href=user_omniauth_authorize_path(:google_oauth2, @auth_params)
+/         .visible-xs-block
+/           img src='https://s3.amazonaws.com/cuag/web/v1/register/icon-google.svg' width='18'
+/         .hidden-xs
+/           img.social-icon-left src='https://s3.amazonaws.com/cuag/web/v1/register/icon-google.svg' width='18'
+/           .font-weight-bold.text-body Google
+/       br
+/
+/   .alert.alert-dismissible.alert-danger.hide
+/     = t('views.devise.sessions._signin.invalid_email')
+/
+/   .row
+/     .col-sm-12
+/       = f.input :email, hint: false, required: true
+/
+/   .row
+/     .col-sm-12
+/       = f.input :password, hint: false, required: true
+/   .row
+/     .col-sm-12
+/       = link_to t('dictionary.forgot_your_password'), new_password_path(resource_name), class: 'text-body underline'
+/       = f.hidden_field :remember_me, value: 1
+/       = hidden_field_tag :anchor
+/
+/   br
+/   .margin-b-15 style='width:180px'
+/     button.btn.btn-primary.btn-block.btn-loading data-loading-text='Log in...' = t('dictionary.log_in')
+/
+/   .row
+/     .col-sm-12
+/       = t('views.devise.sessions._signin.not_a_member')
+/       =< link_to t('views.devise.sessions._signin.signup_here'), new_user_registration_path, class: 'text-primary', data: { toggle: 'modal', keyboard: false }
+/
+/ coffeeview:
+/   $ ->
+/     $(".new-user").bind 'ajax:error', (event, data, status, xhr) ->
+/       $('.new-user .btn-loading').button('reset')
+/       $(this).children('.alert').removeClass('hide')
+/
+/     $(".back-button").bind 'click', (event) =>
+/       $(".alert").addClass('hide')
