@@ -21,4 +21,4 @@
 .byebug_history
 
 # Ignore ide related things.
-.idea/
+/.idea/
