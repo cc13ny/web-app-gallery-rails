@@ -15,3 +15,6 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require cocoon
+
+@showModal = (modal_html) ->
+  $(modal_html).appendTo(document.body).modal()
