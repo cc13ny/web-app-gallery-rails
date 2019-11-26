@@ -1,0 +1,60 @@
+nav.navbar.navbar-inverse.margin-b-0
+  .container-fluid
+    /! Brand and toggle get grouped for better mobile display
+    .navbar-header
+      button.navbar-toggle.collapsed aria-expanded="false" data-target="#navbar-collapse-1" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="#"  Linkcnt
+    /! Collect the nav links, forms, and other content for toggling
+    #navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active
+          a href="#"
+            | Link
+            span.sr-only (current)
+        li
+          a href="#"  Link
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            | Dropdown
+            span.caret
+          ul.dropdown-menu
+            li
+              a href="#"  Action
+            li
+              a href="#"  Another action
+            li
+              a href="#"  Something else here
+            li.divider role="separator"
+            li
+              a href="#"  Separated link
+            li.divider role="separator"
+            li
+              a href="#"  One more separated link
+
+      - if user_signed_in?
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            a.dropdown-toggle.text-white.text-important aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+              | Welcome #{current_user.first_name} !
+              span.caret
+            ul.dropdown-menu
+              li
+                a href="#"  Action
+              li
+                a href="#"  Another action
+              li
+                a href="#"  Something else here
+              li.divider role="separator"
+              li
+                a href="#"  Separated link
+      - else
+        form.navbar-form.navbar-right
+          .form-group
+            input.form-control placeholder="Email" type="text" /
+            input.form-control placeholder="Password" type="text" /
+          button.btn.btn-default type="submit"  Login
+          / a.btn.btn-default  Signup
