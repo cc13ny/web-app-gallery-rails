@@ -1,4 +1,4 @@
-class CreateUserEducations < ActiveRecord::Migration[5.0]
+class CreateUserEducations < ActiveRecord::Migration[5.2]
   def change
     create_table :user_educations do |t|
       t.references :user, foreign_key: true, null: false

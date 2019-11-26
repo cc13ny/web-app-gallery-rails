@@ -1,4 +1,4 @@
-class CreateUserProfiles < ActiveRecord::Migration[5.0]
+class CreateUserProfiles < ActiveRecord::Migration[5.2]
   def change
     create_table :user_profiles do |t|
       t.references :user, foreign_key: true, null: false, index: {uniq: true}

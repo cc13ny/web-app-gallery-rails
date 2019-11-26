@@ -1,4 +1,4 @@
-class CreateDepartments < ActiveRecord::Migration[5.0]
+class CreateDepartments < ActiveRecord::Migration[5.2]
   def change
     create_table :departments do |t|
       t.references :company, foreign_key: true, null: false

@@ -1,4 +1,4 @@
-class AddIndexToDepartments < ActiveRecord::Migration[5.0]
+class AddIndexToDepartments < ActiveRecord::Migration[5.2]
   def change
     add_index :departments, :name, unique: true
   end

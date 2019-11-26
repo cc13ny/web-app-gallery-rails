@@ -1,4 +1,4 @@
-class CreateUserExperiences < ActiveRecord::Migration[5.0]
+class CreateUserExperiences < ActiveRecord::Migration[5.2]
   def change
     create_table :user_experiences do |t|
       t.references :user, foreign_key: true, null: false

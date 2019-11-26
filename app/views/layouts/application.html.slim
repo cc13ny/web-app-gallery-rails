@@ -13,3 +13,19 @@ html
           / = modal title: 'Log in', body: render('users/sessions/login'), id: 'login-modal'
           = yield :modals
           = yield
+
+/ <!DOCTYPE html>
+/ <html>
+/   <head>
+/     <title>MyRailsRepoSkeleton</title>
+/     <%= csrf_meta_tags %>
+/     <%= csp_meta_tag %>
+/
+/     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+/     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+/   </head>
+/
+/   <body>
+/     <%= yield %>
+/   </body>
+/ </html>
