@@ -17,8 +17,22 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+/node_modules
+/yarn-error.log
+
+/public/assets
+
 # Ignore Byebug command history file.
 .byebug_history
 
 # Ignore ide related things.
 /.idea/
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+
