@@ -1,0 +1,22 @@
+= simple_form_for @user, remote: true do |f|
+  .row
+    .col-sm-6
+      = f.input :title
+    .col-sm-6
+      = f.input :is_public
+  .row
+    .col-sm-3
+      = f.input :starts_at, as: :string, input_html: { class: 'datetime-picker' }, label: 'Start'
+    .col-sm-3
+      = f.input :ends_at, as: :string, input_html: { class: 'datetime-picker' }, label: 'End'
+  .row
+    .col-sm-12
+      = f.input :organizer_name, as: :string
+    .col-sm-12
+      = f.input :description
+  .row
+    .col-sm-12
+      = f.button :submit, class: 'btn btn-primary pull-right'
+
+coffee:
+  $('.datetime-picker').datetimepicker({format: 'YYYY-MM-DD HH:mm'});

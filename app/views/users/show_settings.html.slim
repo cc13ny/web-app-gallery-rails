@@ -1,0 +1,14 @@
+ul.nav.nav-tabs
+  - @type_list.each do |type, tab_name|
+    li class=(@type == type ? 'active' : '')
+      = link_to tab_name, users_settings_path(type: type)
+
+- case @type
+- when :privacy
+  = render 'users/settings/privacy_form'
+- when :advertising
+  = render 'users/settings/advertising_form'
+- when :messages
+  = render 'users/settings/messages_form'
+- else
+  = render 'users/settings/account_form'

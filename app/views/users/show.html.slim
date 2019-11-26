@@ -1,0 +1,30 @@
+.row
+  - 2.times
+    br
+  .col-xs-8
+    .panel.panel-primary
+      .panel-heading
+      .panel-body
+        a.glyphicon.glyphicon-pencil.pull-right href=edit_user_path(@user) data-remote='true'
+        h3 = @user.full_name
+        = @user.profile.headline
+
+    - if @user.profile.about
+      br
+      .panel.panel-default
+        .panel-body
+          header
+            h2 About
+          = @user.profile.about
+    - if @user.experiences.exists?
+      br
+      ul.list-group
+        li.list-group-item
+          h2 Experience
+          - @user.experiences.ordered.each do |expeirence|
+
+
+  .col-xs-4
+    #ads
+    #people-also-viewed
+      |People Also Viewed

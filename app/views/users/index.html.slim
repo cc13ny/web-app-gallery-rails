@@ -1,0 +1,17 @@
+h1 User List
+br
+
+
+table.table.table-bordered
+  thead
+    tr
+      th Name
+      th Email
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.full_name
+        td = user.email
+        td = link_to 'Show', user
