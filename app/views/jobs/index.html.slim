@@ -1,0 +1,19 @@
+br
+table.table.table-bordered
+  thead
+    tr
+      th Name
+      th Description
+      th
+      / th
+      / th
+
+  tbody
+    - @jobs.each do |job|
+      tr
+        td = job.title
+        td = job.description
+        td = link_to 'Apply', apply_job_path(job)
+        / td = link_to 'Show', job
+        / td = link_to 'Edit', edit_job_path(job)
+        / td = link_to 'Destroy', job, data: { confirm: 'Are you sure?' }, method: :delete

@@ -1,0 +1,6 @@
+= simple_form_for @job_application, url: submit_application_job_path(@job) do |f|
+  .form-inputs
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :job_id, value: @job.id
+  .form-actions
+    = f.button :submit, class: 'btn-primary pull-right'

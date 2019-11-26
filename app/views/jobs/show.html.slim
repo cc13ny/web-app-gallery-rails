@@ -1,0 +1,11 @@
+/ p#notice = notice
+/ => link_to 'Edit', edit_job_path(@job)
+/ '|
+/ =< link_to 'Back', jobs_path
+
+
+h1 = @job.title
+p = @job.description
+
+
+= link_to 'Apply', apply_job_path(@job), class: 'btn btn-primary pull-right'
