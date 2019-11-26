@@ -1,0 +1,6 @@
+= simple_form_for @company do |f|
+  .form-inputs
+    = f.input :name, required: true
+    = f.input :description, required: false
+  .form-actions
+    = f.button :submit, class: 'btn-primary pull-right'

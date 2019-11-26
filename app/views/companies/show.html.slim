@@ -1,0 +1,10 @@
+/ p#notice = notice
+
+h1 = @company.name
+p
+  = @company.description
+  = link_to 'Post Job',  new_company_job_path(@company), class: 'btn btn-primary pull-right'
+
+/ => link_to 'Edit', edit_company_path(@company)
+/ '|
+/ =< link_to 'Back', companies_path
