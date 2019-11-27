@@ -41,7 +41,11 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'simple_form'
 gem 'reform'
 gem 'reform-rails'
-gem "cocoon"
+gem 'cocoon'
+gem 'pundit'
+gem 'ruby-kafka'
+gem 'chewy'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
