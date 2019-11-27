@@ -45,6 +45,7 @@ gem 'cocoon'
 gem 'pundit'
 gem 'ruby-kafka'
 gem 'chewy'
+gem 'stripe'
 
 
 group :development, :test do
