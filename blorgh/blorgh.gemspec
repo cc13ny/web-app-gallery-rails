@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Blorgh::VERSION
   spec.authors     = ["Chi Chen"]
   spec.email       = ["cc2015ex@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Blorgh."
-  spec.description = "TODO: Description of Blorgh."
+  spec.homepage    = ""
+  spec.summary     = "Summary of Blorgh."
+  spec.description = "Description of Blorgh."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
