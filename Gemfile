@@ -46,7 +46,7 @@ gem 'pundit'
 gem 'ruby-kafka'
 gem 'chewy'
 gem 'stripe'
-
+gem 'thredded', '~> 0.16.14'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
