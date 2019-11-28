@@ -1,14 +1,25 @@
+#default: &default
+#  adapter: mysql2
+#  username: rails_repos
+#  password: password
+#  host: localhost
+#  pool: 5
+#
+#development:
+#  <<: *default
+#  database: linkedin_development
+#
+#test:
+#  <<: *default
+#  database: linkedin_test
+
 default: &default
-  adapter: mysql2
-  username: rails_repos
-  password: password
-  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password:
   pool: 5
-
-development:
+  host: db
+production:
   <<: *default
-  database: linkedin_development
-
-test:
-  <<: *default
-  database: linkedin_test
+  database: app_name_production
