@@ -20,19 +20,20 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
-  database: web-app-gallery-rails_development
+  database: api-only-development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: web-app-gallery-rails
+  username: api_only
 
   # The password associated with the postgres role (username).
-  #password:
+  password: api_only
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -57,7 +58,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: web-app-gallery-rails_test
+  database: api_only_test
+  username: api_only
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: web-app-gallery-rails_production
-  username: web-app-gallery-rails
+  database: api_only_production
+  username: api_only
   password: <%= ENV['WEB-APP-GALLERY-RAILS_DATABASE_PASSWORD'] %>
