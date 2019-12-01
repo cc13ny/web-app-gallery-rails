@@ -1,6 +1,9 @@
 {
   "name": "api-only",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.13.1"
+  },
   "description": "Try out Rails API-Only with React",
   "main": "client/src/App.js",
   "dependencies": {
@@ -12,6 +15,9 @@
   },
   "devDependencies": {},
   "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
