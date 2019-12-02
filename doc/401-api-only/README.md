@@ -4,3 +4,9 @@
 2. [Node.js package.json main parameter](https://stackoverflow.com/questions/22512992/node-js-package-json-main-parameter)
 3. [The Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 4. [Deploy with Git](https://devcenter.heroku.com/articles/git)
+
+
+#Setup
+
+## Database
+1. https://chartio.com/resources/tutorials/how-to-change-a-user-to-superuser-in-postgresql/#creating-a-new-user
