@@ -2,9 +2,9 @@ development:
   adapter: async
 
 test:
-  adapter: async
+  adapter: test
 
 production:
   adapter: redis
   url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: web-app-gallery-rails_production
+  channel_prefix: web_app_gallery_rails_production
