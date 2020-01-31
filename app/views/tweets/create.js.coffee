@@ -1,1 +1,2 @@
-$('#new_tweet').closest('tr').after <%= render 'item', tweet: @tweet %>
+$('#tweet_text').val('')
+$('#new_tweet').closest('tr').after"<%= j render 'item', tweet: @tweet %>"
