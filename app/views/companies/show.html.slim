@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Business name:
+  = @company.business_name
+p
+  strong Description:
+  = @company.description
+
+=> link_to 'Edit', edit_company_path(@company)
+'|
+=< link_to 'Back', companies_path
