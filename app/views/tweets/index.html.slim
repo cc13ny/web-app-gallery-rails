@@ -1,19 +1,37 @@
-h1 Listing tweets
+.container
+  .row
+    .col-xs-2
+    .col-xs-10
+      h1 = current_user.full_name
+      table.table.table-bordered
+        thead
+          tr
+            th Tweet
+        tbody
+          tr
+            td
+              = simple_form_for Tweet.new, remote: true do |f|
+                = f.hidden_field :user_id, value: current_user.id
+                = f.input :text, as: :text, label: false, input_html: {rows: 3}
+                = f.submit 'post', class: 'btn btn-primary pull-right'
+          = render partial: 'item', collection: @tweets, as: :tweet
 
-table
-  thead
-    tr
-      th
-      th
-      th
+      / table
+      /   thead
+      /     tr
+      /       th
+      /       th
+      /       th
+      /
+      /   tbody
+      /     - @tweets.each do |tweet|
+      /       tr
+      /         td = link_to 'Show', tweet
+      /         td = link_to 'Edit', edit_tweet_path(tweet)
+      /         td = link_to 'Destroy', tweet, data: {confirm: 'Are you sure?'}, method: :delete
+    .col-xs-2
 
-  tbody
-    - @tweets.each do |tweet|
-      tr
-        td = link_to 'Show', tweet
-        td = link_to 'Edit', edit_tweet_path(tweet)
-        td = link_to 'Destroy', tweet, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
-
-= link_to 'New Tweet', new_tweet_path
+/ br
+/
+/ = link_to 'New Tweet', new_tweet_path

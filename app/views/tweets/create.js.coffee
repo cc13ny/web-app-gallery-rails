@@ -1,0 +1,1 @@
+$('#new_tweet').closest('tr').after <%= render 'item', tweet: @tweet %>
