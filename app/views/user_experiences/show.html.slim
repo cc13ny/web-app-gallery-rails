@@ -1,0 +1,42 @@
+p#notice = notice
+
+p
+  strong User:
+  = @user_experience.user
+p
+  strong Company name:
+  = @user_experience.company_name
+p
+  strong Company:
+  = @user_experience.company
+p
+  strong Title:
+  = @user_experience.title
+p
+  strong Position variant:
+  = @user_experience.position_variant_id
+p
+  strong Start year:
+  = @user_experience.start_year
+p
+  strong Start month:
+  = @user_experience.start_month
+p
+  strong End year:
+  = @user_experience.end_year
+p
+  strong End month:
+  = @user_experience.end_month
+p
+  strong Present:
+  = @user_experience.present
+p
+  strong Location:
+  = @user_experience.location
+p
+  strong Description:
+  = @user_experience.description
+
+=> link_to 'Edit', edit_user_experience_path(@user_experience)
+'|
+=< link_to 'Back', user_experiences_path

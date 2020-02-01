@@ -1,0 +1,21 @@
+h1 Listing position_variants
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @position_variants.each do |position_variant|
+      tr
+        td = position_variant.name
+        td = link_to 'Show', position_variant
+        td = link_to 'Edit', edit_position_variant_path(position_variant)
+        td = link_to 'Destroy', position_variant, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Position variant', new_position_variant_path

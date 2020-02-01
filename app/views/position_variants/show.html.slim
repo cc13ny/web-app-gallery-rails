@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @position_variant.name
+
+=> link_to 'Edit', edit_position_variant_path(@position_variant)
+'|
+=< link_to 'Back', position_variants_path

@@ -1,0 +1,43 @@
+h1 Listing user_experiences
+
+table
+  thead
+    tr
+      th User
+      th Company name
+      th Company
+      th Title
+      th Position variant
+      th Start year
+      th Start month
+      th End year
+      th End month
+      th Present
+      th Location
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @user_experiences.each do |user_experience|
+      tr
+        td = user_experience.user
+        td = user_experience.company_name
+        td = user_experience.company
+        td = user_experience.title
+        td = user_experience.position_variant_id
+        td = user_experience.start_year
+        td = user_experience.start_month
+        td = user_experience.end_year
+        td = user_experience.end_month
+        td = user_experience.present
+        td = user_experience.location
+        td = user_experience.description
+        td = link_to 'Show', user_experience
+        td = link_to 'Edit', edit_user_experience_path(user_experience)
+        td = link_to 'Destroy', user_experience, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New User experience', new_user_experience_path

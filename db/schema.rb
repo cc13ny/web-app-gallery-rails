@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200131230215) do
+ActiveRecord::Schema.define(version: 20200201002033) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "business_name"
     t.text     "description",   limit: 65535
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "description", limit: 65535
+    t.integer  "company_id"
+    t.datetime "paid_at"
+    t.datetime "expires_at"
+    t.datetime "closed_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -33,4 +45,5 @@ ActiveRecord::Schema.define(version: 20200131230215) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "jobs", "companies"
 end

@@ -1,0 +1,2 @@
+class PositionVariant < ApplicationRecord
+end
