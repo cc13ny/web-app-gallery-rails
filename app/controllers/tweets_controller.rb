@@ -3,8 +3,40 @@ class TweetsController < ApplicationController
 
   # GET /tweets
   # GET /tweets.json
+  # i.e. timeline
   def index
-    @tweets = Tweet.where(user: current_user).order(created_at: :desc)
+    page_size = 5
+
+    respond_to do |format|
+      format.html {
+        if params[:max_id].blank? and params[:min_id].blank?
+          @tweets = current_user.tweets.ordered.first(page_size+1)
+
+          if @tweets.size > page_size
+            @next_max_id = (@tweets.pop).id
+          end
+        end
+      }
+      format.js {
+        if params[:max_id].present?
+          @tweets = current_user.tweets.ordered.where("id <= ?", params[:max_id]).first(page_size+1)
+
+          if @tweets.size > page_size
+            @next_max_id = (@tweets.pop).id
+          end
+
+          render 'load_more'
+        elsif params[:min_id].present?
+          @tweets = current_user.tweets.ordered.where("id > ?", params[:min_id]).first(page_size+1)
+
+          render 'fetch_more'
+        end
+      }
+    end
+  end
+
+  def newsfeed
+
   end
 
   # GET /tweets/1

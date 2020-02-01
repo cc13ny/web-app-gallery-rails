@@ -1,4 +1,4 @@
 tr
   td
-    = tweet.text
+    ' [#{tweet.id}] #{tweet.text}
     .pull-right = tweet.created_at.strftime('%F %R ')

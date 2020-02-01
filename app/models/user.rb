@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
+  has_many :tweets, dependent: :delete_all
+
+
   def full_name
     [first_name, last_name].join(' ')
   end
