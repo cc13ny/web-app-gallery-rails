@@ -1,0 +1,39 @@
+h1 Listing user_educations
+
+table
+  thead
+    tr
+      th User
+      th School name
+      th Degree
+      th Field of study
+      th Start year
+      th Start month
+      th End year
+      th End month
+      th Grade
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @user_educations.each do |user_education|
+      tr
+        td = user_education.user
+        td = user_education.school_name
+        td = user_education.degree
+        td = user_education.field_of_study
+        td = user_education.start_year
+        td = user_education.start_month
+        td = user_education.end_year
+        td = user_education.end_month
+        td = user_education.grade
+        td = user_education.description
+        td = link_to 'Show', user_education
+        td = link_to 'Edit', edit_user_education_path(user_education)
+        td = link_to 'Destroy', user_education, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New User education', new_user_education_path

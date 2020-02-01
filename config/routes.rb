@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_educations
   resources :position_variants
   resources :user_experiences
   root to: "home#index"

@@ -1,0 +1,36 @@
+p#notice = notice
+
+p
+  strong User:
+  = @user_education.user
+p
+  strong School name:
+  = @user_education.school_name
+p
+  strong Degree:
+  = @user_education.degree
+p
+  strong Field of study:
+  = @user_education.field_of_study
+p
+  strong Start year:
+  = @user_education.start_year
+p
+  strong Start month:
+  = @user_education.start_month
+p
+  strong End year:
+  = @user_education.end_year
+p
+  strong End month:
+  = @user_education.end_month
+p
+  strong Grade:
+  = @user_education.grade
+p
+  strong Description:
+  = @user_education.description
+
+=> link_to 'Edit', edit_user_education_path(@user_education)
+'|
+=< link_to 'Back', user_educations_path

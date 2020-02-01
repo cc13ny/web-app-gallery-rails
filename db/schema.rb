@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200201002033) do
+ActiveRecord::Schema.define(version: 20200201200233) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "business_name"
@@ -31,6 +31,32 @@ ActiveRecord::Schema.define(version: 20200201002033) do
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
   end
 
+  create_table "position_variants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_experiences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "company_name"
+    t.integer  "company_id"
+    t.string   "title"
+    t.integer  "position_variant_id"
+    t.integer  "start_year"
+    t.integer  "start_month"
+    t.integer  "end_year"
+    t.integer  "end_month"
+    t.binary   "present",             limit: 65535
+    t.string   "location"
+    t.text     "description",         limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["company_id"], name: "index_user_experiences_on_company_id", using: :btree
+    t.index ["position_variant_id"], name: "index_user_experiences_on_position_variant_id", using: :btree
+    t.index ["user_id"], name: "index_user_experiences_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -46,4 +72,7 @@ ActiveRecord::Schema.define(version: 20200201002033) do
   end
 
   add_foreign_key "jobs", "companies"
+  add_foreign_key "user_experiences", "companies"
+  add_foreign_key "user_experiences", "position_variants"
+  add_foreign_key "user_experiences", "users"
 end
