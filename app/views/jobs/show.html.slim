@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @job.title
+p
+  strong Description:
+  = @job.description
+p
+  strong Company:
+  = @job.company
+p
+  strong Paid at:
+  = @job.paid_at
+p
+  strong Expires at:
+  = @job.expires_at
+p
+  strong Closed at:
+  = @job.closed_at
+
+=> link_to 'Edit', edit_job_path(@job)
+'|
+=< link_to 'Back', jobs_path

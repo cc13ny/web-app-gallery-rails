@@ -1,1 +1,4 @@
-
+= simple_form_for @company do |f|
+  = f.input :business_name
+  = f.input :description
+  = f.submit 'Create', class: 'btn btn-primary pull-right'

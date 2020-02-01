@@ -4,12 +4,13 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.all.ordered
   end
 
   # GET /companies/1
   # GET /companies/1.json
   def show
+    @company = Company.find_by_id(params[:id])
   end
 
   # GET /companies/new

@@ -1,23 +1,24 @@
-h1 Listing companies
+.container
+  .row
+    .col-xs-12
+      h1 Listing companies
+      table.table.table-bordered
+        thead
+          tr
+            th Name
+            th Description
+            th
+            th
+            th
 
-table
-  thead
-    tr
-      th Business name
-      th Description
-      th
-      th
-      th
+        tbody
+          - @companies.each do |company|
+            tr
+              td = company.business_name
+              td = company.description
+              td = link_to 'Show', company
+              td = link_to 'Edit', edit_company_path(company)
+              td = link_to 'Destroy', company, data: { confirm: 'Are you sure?' }, method: :delete
 
-  tbody
-    - @companies.each do |company|
-      tr
-        td = company.business_name
-        td = company.description
-        td = link_to 'Show', company
-        td = link_to 'Edit', edit_company_path(company)
-        td = link_to 'Destroy', company, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
-
-= link_to 'New Company', new_company_path
+      = link_to 'New Company', new_company_path
