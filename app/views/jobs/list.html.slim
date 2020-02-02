@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-xs-12
+      h1 All Job List
+      br
+      br
+      table.table.table-bordered
+        thead
+          tr
+            th Job ID
+            th Job Title
+            th Belongs to which Company
+        tbody
+          - @jobs.each do |job|
+            tr
+              th = job.id
+              td = job.title
+              th = job.company.business_name

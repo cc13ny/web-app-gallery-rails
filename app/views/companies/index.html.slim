@@ -10,6 +10,7 @@
             th
             th
             th
+            th
 
         tbody
           - @companies.each do |company|
@@ -19,6 +20,7 @@
               td = link_to 'Show', company
               td = link_to 'Edit', edit_company_path(company)
               td = link_to 'Destroy', company, data: { confirm: 'Are you sure?' }, method: :delete
+              td = link_to 'Post Job', new_company_job_path(company)
 
 
       = link_to 'New Company', new_company_path

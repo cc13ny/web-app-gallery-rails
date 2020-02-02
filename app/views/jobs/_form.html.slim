@@ -1,1 +1,5 @@
-
+= simple_form_for @job, url: (@job.new_record? ? company_jobs_path(@company) : company_job_path(@job)) do |f|
+  = f.input :title
+  = f.input :description
+  = f.hidden_field :company_id, value: @company.id
+  = f.submit 'Create', class: 'btn btn-primary pull-right'

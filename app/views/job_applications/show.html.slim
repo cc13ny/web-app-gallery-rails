@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Job:
+  = @job_application.job
+p
+  strong User:
+  = @job_application.user
+p
+  strong Withdrawn at:
+  = @job_application.withdrawn_at
+p
+  strong Applied at:
+  = @job_application.applied_at
+
+=> link_to 'Edit', edit_job_application_path(@job_application)
+'|
+=< link_to 'Back', job_applications_path

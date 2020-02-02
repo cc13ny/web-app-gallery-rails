@@ -1,8 +1,12 @@
-h1 Editing job
+.container
+  .row
+    .col-xs-12
 
-== render 'form'
+      h1 Editing job
 
-=> link_to 'Show', @job
-'|
-=< link_to 'Back', jobs_path
+      == render 'form'
+
+      => link_to 'Show', @job
+      '|
+      =< link_to 'Back', company_jobs_path(@company)
 

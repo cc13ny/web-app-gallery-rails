@@ -4,27 +4,39 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
+    @company = Company.find_by_id(params[:company_id])
+    @jobs = Job.where(company: @company)
+  end
+
+  def list
     @jobs = Job.all
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job = Job.find_by_id(params[:id])
+    @company = @job.company
   end
 
   # GET /jobs/new
   def new
+    @company = Company.find_by_id(params[:company_id])
     @job = Job.new
   end
 
   # GET /jobs/1/edit
   def edit
+    @job = Job.find_by_id(params[:id])
+    @company = @job.company
   end
 
   # POST /jobs
   # POST /jobs.json
   def create
+    @company = Company.find_by_id(params[:company_id])
     @job = Job.new(job_params)
+    @job.expires_at = Time.now + 60.days
 
     respond_to do |format|
       if @job.save

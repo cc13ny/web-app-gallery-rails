@@ -22,8 +22,9 @@
             .panel-heading
               | Experience
             .panel-body
-              = link_to 'Add', new_user_user_experience_path(@user), remote: true, class: 'btn btn-sm btn-primary pull-right margin-b-10'
-              table.table.table-bordered#user-experiences class=(@user.user_experiences.exists? ? '' : 'hide')
+              - if current_user == @user
+                = link_to 'Add', new_user_user_experience_path(@user), remote: true, class: 'btn btn-sm btn-primary pull-right margin-b-10'
+              table.table.table-bordered#user-experiences style=(@user.user_experiences.exists? ? '' : 'display: none')
                 tbody
                   - @user.user_experiences.each do |exp|
                     = render 'user_experiences/item', exp: exp

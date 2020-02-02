@@ -1,31 +1,30 @@
-h1 Listing jobs
+.container
+  .row
+    .col-xs-12
+      h1 Listing jobs
 
-table
-  thead
-    tr
-      th Title
-      th Description
-      th Company
-      th Paid at
-      th Expires at
-      th Closed at
-      th
-      th
-      th
+      table.table.table-bordered
+        thead
+          tr
+            th Title
+            th Description
+            th Company
+            th Paid at
+            th Expires at
+            th Closed at
+            th
+            th
+            th
 
-  tbody
-    - @jobs.each do |job|
-      tr
-        td = job.title
-        td = job.description
-        td = job.company
-        td = job.paid_at
-        td = job.expires_at
-        td = job.closed_at
-        td = link_to 'Show', job
-        td = link_to 'Edit', edit_job_path(job)
-        td = link_to 'Destroy', job, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Job', new_job_path
+        tbody
+          - @jobs.each do |job|
+            tr
+              td = job.title
+              td = job.description
+              td = job.company.business_name
+              td = job.paid_at
+              td = job.expires_at
+              td = job.closed_at
+              td = link_to 'Show', job
+              td = link_to 'Edit', edit_job_path(job)
+              td = link_to 'Destroy', job, data: { confirm: 'Are you sure?' }, method: :delete

@@ -1,24 +1,33 @@
-p#notice = notice
+.container
+  .row
+    .col-xs-12
+      p#notice = notice
 
-p
-  strong Title:
-  = @job.title
-p
-  strong Description:
-  = @job.description
-p
-  strong Company:
-  = @job.company
-p
-  strong Paid at:
-  = @job.paid_at
-p
-  strong Expires at:
-  = @job.expires_at
-p
-  strong Closed at:
-  = @job.closed_at
+      h1 = @job.title
 
-=> link_to 'Edit', edit_job_path(@job)
-'|
-=< link_to 'Back', jobs_path
+      p
+        strong Company:
+        =< @job.company.business_name
+
+      .panel.panel-default
+        .panel-heading
+          ' Description:
+        .panel-body
+          = @job.description
+
+      p
+        strong Expires at:
+        =< @job.expires_at
+      p
+        strong Paid at:
+        =< @job.paid_at
+
+      p
+        strong Closed at:
+        =< @job.closed_at
+
+      => link_to 'Edit', edit_job_path(@job)
+      '|
+      =< link_to 'Back', company_jobs_path(@company)
+
+
