@@ -1,1 +1,25 @@
-
+.row
+  = simple_form_for @user_experience, url: user_user_experiences_path(@user), remote: true do |f|
+    = f.hidden_field :user_id, value: @user.id
+    .col-xs-12
+      = f.input :company_name
+    .col-xs-12
+      = f.input :title
+    .col-xs-12
+      = f.input :location
+    .col-xs-12
+      .row
+        .col-xs-6
+          = f.input :start_year
+        .col-xs-6
+          = f.input :start_month
+    .col-xs-12
+      .row
+        .col-xs-6
+          = f.input :end_year
+        .col-xs-6
+          = f.input :end_month
+    .col-xs-12
+      = f.input :description
+    .col-xs-12
+      = f.submit 'Create', class: 'btn btn-primary pull-right'

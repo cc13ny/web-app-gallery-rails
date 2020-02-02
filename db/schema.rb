@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200201200233) do
+ActiveRecord::Schema.define(version: 20200201224254) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "business_name"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 20200201200233) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_educations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "school_name"
+    t.string   "degree"
+    t.string   "field_of_study"
+    t.integer  "start_year"
+    t.integer  "start_month"
+    t.integer  "end_year"
+    t.integer  "end_month"
+    t.string   "grade"
+    t.text     "description",    limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["user_id"], name: "index_user_educations_on_user_id", using: :btree
+  end
+
   create_table "user_experiences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "company_name"
@@ -57,6 +73,14 @@ ActiveRecord::Schema.define(version: 20200201200233) do
     t.index ["user_id"], name: "index_user_experiences_on_user_id", using: :btree
   end
 
+  create_table "user_profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.text     "about",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -72,7 +96,9 @@ ActiveRecord::Schema.define(version: 20200201200233) do
   end
 
   add_foreign_key "jobs", "companies"
+  add_foreign_key "user_educations", "users"
   add_foreign_key "user_experiences", "companies"
   add_foreign_key "user_experiences", "position_variants"
   add_foreign_key "user_experiences", "users"
+  add_foreign_key "user_profiles", "users"
 end

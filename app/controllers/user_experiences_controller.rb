@@ -14,7 +14,8 @@ class UserExperiencesController < ApplicationController
 
   # GET /user_experiences/new
   def new
-    @user_experience = UserExperience.new
+    @user = User.find_by_id(params[:user_id])
+    @user_experience = UserExperience.new(user_id: params[:user_id])
   end
 
   # GET /user_experiences/1/edit
@@ -24,15 +25,18 @@ class UserExperiencesController < ApplicationController
   # POST /user_experiences
   # POST /user_experiences.json
   def create
+    @user = User.find_by_id(params[:user_id])
     @user_experience = UserExperience.new(user_experience_params)
 
     respond_to do |format|
       if @user_experience.save
         format.html { redirect_to @user_experience, notice: 'User experience was successfully created.' }
-        format.json { render :show, status: :created, location: @user_experience }
+        format.js
+        # format.json { render :show, status: :created, location: @user_experience }
       else
         format.html { render :new }
-        format.json { render json: @user_experience.errors, status: :unprocessable_entity }
+        format.js
+        # format.json { render json: @user_experience.errors, status: :unprocessable_entity }
       end
     end
   end

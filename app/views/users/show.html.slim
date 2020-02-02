@@ -1,14 +1,34 @@
+- content_for :modals do
+  #new_experience_modal
+  #new_education_modal
+
+
 .container
   .row
     .col-xs-12
+      = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'pull-right'
       h1.text-center #{@user.full_name}
+      br
+      br
     .col-xs-8
-      .panel.panel-primary
-        .panel-heading
-          | Experience
-        .panel-body
-      .panel.panel-primary
-        .panel-heading
-          | Education
-        .panel-body
+      .row
+        .col-xs-12
+          .panel.panel-primary
+            .panel-heading
+              | About
+            .panel-body
+              = @user.user_profile.about
+          .panel.panel-primary
+            .panel-heading
+              | Experience
+            .panel-body
+              = link_to 'Add', new_user_user_experience_path(@user), remote: true, class: 'btn btn-sm btn-primary pull-right margin-b-10'
+              table.table.table-bordered#user-experiences class=(@user.user_experiences.exists? ? '' : 'hide')
+                tbody
+                  - @user.user_experiences.each do |exp|
+                    = render 'user_experiences/item', exp: exp
+          .panel.panel-primary
+            .panel-heading
+              | Education
+            .panel-body
     .col-xs-4
