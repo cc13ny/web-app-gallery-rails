@@ -1,5 +1,23 @@
-h1 New job_application
+.container
+  .row
+    .col-xs-10.col-xs-push-1
+      h1 Apply #{@job.title}
 
-== render 'form'
+      .panel.panel-primary
+        .panel-heading
+          h2 = current_user.full_name
+        .panel-body
+          - if current_user.user_experiences.exists?
+            strong Experience:
+            br
+            ul
+              - current_user.user_experiences.each do |exp|
+                li Worked at #{exp.company_name }
 
-= link_to 'Back', job_applications_path
+
+
+
+
+      == render 'form'
+
+      = link_to 'Back', ats_dashboard_job_path(@job)

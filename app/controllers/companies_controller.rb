@@ -13,6 +13,10 @@ class CompaniesController < ApplicationController
     @company = Company.find_by_id(params[:id])
   end
 
+  def dashboard
+
+  end
+
   # GET /companies/new
   def new
     @company = Company.new

@@ -1,0 +1,11 @@
+br
+br
+.container
+  .row
+    .col-xs-4
+      ul.list-group
+        - @job_applications.each do |application|
+          li.list-group-item
+            strong.margin-b-5 = application.user.full_name
+            div = application.user.email
+    .col-xs-8

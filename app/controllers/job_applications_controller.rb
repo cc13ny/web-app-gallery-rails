@@ -14,7 +14,8 @@ class JobApplicationsController < ApplicationController
 
   # GET /job_applications/new
   def new
-    @job_application = JobApplication.new
+    @job = Job.find_by_id(params[:job_id])
+    @job_application = JobApplication.new(job_id: params[:job_id])
   end
 
   # GET /job_applications/1/edit
@@ -25,6 +26,7 @@ class JobApplicationsController < ApplicationController
   # POST /job_applications.json
   def create
     @job_application = JobApplication.new(job_application_params)
+    @job_application.applied_at = Time.now
 
     respond_to do |format|
       if @job_application.save

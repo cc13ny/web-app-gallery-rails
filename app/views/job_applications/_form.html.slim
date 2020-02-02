@@ -1,1 +1,4 @@
-
+= simple_form_for @job_application, url: (@job_application.new_record? ? job_job_applications_path(@job) : job_application_path(@job_application)) do |f|
+  = f.hidden_field :job_id
+  = f.hidden_field :user_id, value: current_user.id
+  = f.submit 'Apply', class: 'btn btn-primary pull-right'

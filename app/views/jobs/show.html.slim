@@ -30,4 +30,9 @@
       '|
       =< link_to 'Back', company_jobs_path(@company)
 
+      .pull-right
+        => link_to 'ATS', ats_dashboard_job_path(@job), class: 'btn btn-default'
+        =< link_to 'Apply', new_job_job_application_path(@job), class: 'btn btn-primary'
+
+
 

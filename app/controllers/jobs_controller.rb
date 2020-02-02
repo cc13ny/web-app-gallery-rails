@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :ats_dashboard]
 
   # GET /jobs
   # GET /jobs.json
@@ -22,7 +22,7 @@ class JobsController < ApplicationController
   # GET /jobs/new
   def new
     @company = Company.find_by_id(params[:company_id])
-    @job = Job.new
+    @job = Job.new(company_id: params[:company_id])
   end
 
   # GET /jobs/1/edit
@@ -71,6 +71,10 @@ class JobsController < ApplicationController
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def ats_dashboard
+    @job_applications = @job.job_applications
   end
 
   private
