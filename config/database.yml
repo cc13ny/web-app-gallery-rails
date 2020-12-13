@@ -1,14 +1,17 @@
 default: &default
-  adapter: mysql2
-  username: rails_repos
-  password: password
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: rails_apps
+  password: <%= ENV['RAILS_APP_DATABASE_PASSWORD'] %>
   host: localhost
-  pool: 5
 
 development:
   <<: *default
-  database: sk_development
+  database: trello_development
 
 test:
   <<: *default
-  database: sk_development
+  database: trello_test
