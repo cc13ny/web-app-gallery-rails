@@ -1,0 +1,102 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { findDOMNode } from 'react-dom';
+import { useDrag} from 'react-dnd';
+// import { getEmptyImage } from 'react-dnd-html5-backend';
+
+import Card from './Card';
+
+
+function getStyles(isDragging) {
+  return {
+    display: isDragging ? 0.5 : 1
+  };
+}
+
+// const cardSource = {
+//   beginDrag(props, monitor, component) {
+//     // dispatch to redux store that drag is started
+//     const { item, x, y } = props;
+//     const { id, title } = item;
+//     const { clientWidth, clientHeight } = findDOMNode(component);
+//
+//     return { id, title, item, x, y, clientWidth, clientHeight };
+//   },
+//   endDrag(props, monitor) {
+//     document.getElementById(monitor.getItem().id).style.display = 'block';
+//     props.stopScrolling();
+//   },
+//   isDragging(props, monitor) {
+//     const isDragging = props.item && props.item.id === monitor.getItem().id;
+//     return isDragging;
+//   }
+// };
+
+// options: 4rd param to DragSource https://gaearon.github.io/react-dnd/docs-drag-source.html
+const OPTIONS = {
+  arePropsEqual: function arePropsEqual(props, otherProps) {
+    let isEqual = true;
+    if (props.item.id === otherProps.item.id &&
+        props.x === otherProps.x &&
+        props.y === otherProps.y
+       ) {
+      isEqual = true;
+    } else {
+      isEqual = false;
+    }
+    return isEqual;
+  }
+};
+
+// function collectDragSource(connectDragSource, monitor) {
+//   return {
+//     connectDragSource: connectDragSource.dragSource(),
+//     connectDragPreview: connectDragSource.dragPreview(),
+//     isDragging: monitor.isDragging()
+//   };
+// }
+
+CardComponent.propTypes = {
+  item: PropTypes.object,
+  connectDragSource: PropTypes.func.isRequired,
+  connectDragPreview: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number,
+  stopScrolling: PropTypes.func
+}
+
+export default function CardComponent(props) {
+  // useEffect(() => {
+  //   props.connectDragPreview(getEmptyImage(), {
+  //     captureDraggingState: true
+  //   });
+  // });
+
+  const { item, x, y } = props;
+
+  const [{isDragging}, drag] = useDrag({
+    item: { type: 'card' },
+    begin: (_) => {
+      // dispatch to redux store that drag is started
+      const { id, title } = item;
+      const { clientWidth, clientHeight } = findDOMNode(item);
+
+      return { id, title, item, x, y, clientWidth, clientHeight };
+    },
+    end: (item, monitor) => {
+      document.getElementById(item.id).style.display = 'block';
+      props.stopScrolling();
+    },
+    isDragging: (monitor) => {
+      return (props.item && props.item.id === item.id);
+    },
+    collect: monitor => ({
+      isDragging: monitor.isDragging(),
+    }),
+  })
+
+  return <Card ref={drag} style={getStyles(isDragging)} item={item} />;
+}
+
+// export default DragSource('card', cardSource, collectDragSource, OPTIONS)(CardComponent)
